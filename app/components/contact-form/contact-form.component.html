@@ -1,0 +1,24 @@
+﻿<div>
+    <form name="gform" id="gform">
+        <input name="name" class="name" placeholder="Name" maxlength="30"
+               [(ngModel)]="contact.name" 
+               (ngModelChange)="checkName()"
+               [ngModelOptions]="{standalone: true}" required /><span><span id="nameNumber" class="{{nameClass}}"></span>/30</span>
+        <span id="nameAlert" class="custom-alert">Required</span>
+        <input name="details" class="details" placeholder="Contact Details. e.g. phone number, email, ect"
+               [(ngModel)]="contact.details"
+               (ngModelChange)="checkDetails()"
+               [ngModelOptions]="{standalone: true}" maxlength="50" /><span><span id="detailNumber" class="{{detailClass}}"></span>/50</span>
+        <span id="detailsAlert" class="custom-alert">Required</span>
+        <textarea name="message" class="message" placeholder="Message" maxlength="300"
+                  [(ngModel)]="contact.message"
+                  (ngModelChange)="checkMessage()"
+                  [ngModelOptions]="{standalone: true}" required></textarea><span><span id="messageNumber" class="{{messageClass}}"></span>/300</span>
+        <span id="messageAlert" class="custom-alert">Required</span>
+        <button class="button" type="submit" (click)="send()">Send</button>
+    </form>
+    <!--<div id="thanks" class="hidden">
+        <h1>Thanks!</h1>
+        <p>Your message is on its way. I'll respond to it as soon as possible!</p>
+    </div>-->
+</div>
